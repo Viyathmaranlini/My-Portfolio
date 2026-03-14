@@ -10,37 +10,36 @@ The website presents information about my education, skills, and featured projec
 ```
 src/
 ├── app/
-│   ├── layout.tsx          # Root layout (fonts, metadata)
-│   ├── page.tsx            # Home page — assembles all sections
-│   └── globals.css         # Tailwind directives + custom styles
-│
+│   ├── layout.tsx          
+│   ├── page.tsx            
+│   └── globals.css        
 ├── components/
 │   ├── layout/
-│   │   ├── Navbar.tsx      # Fixed navigation bar
+│   │   ├── Navbar.tsx      
 │   │   ├── Footer.tsx
-│   │   └── SectionWrapper.tsx  # Reusable scroll-animated wrapper
+│   │   └── SectionWrapper.tsx  
 │   │
 │   ├── hero/
-│   │   ├── HeroSection.tsx     # Hero layout (text + canvas)
-│   │   └── HeroScene.tsx       # Three.js 3D scene
+│   │   ├── HeroSection.tsx     
+│   │   └── HeroScene.tsx      
 │   │
 │   ├── projects/
-│   │   ├── ProjectShowcase.tsx # Grid/carousel of projects
-│   │   └── ProjectCard.tsx     # Individual animated card
+│   │   ├── ProjectShowcase.tsx 
+│   │   └── ProjectCard.tsx     
 │   │
 │   ├── about/
 │   │   ├── AboutSection.tsx
-│   │   └── TimelineItem.tsx    # Single timeline entry
+│   │   └── TimelineItem.tsx   
 │   │
 │   └── contact/
 │       ├── ContactSection.tsx
 │       └── ContactForm.tsx
 │
 ├── lib/
-│   └── data.ts             # Projects array, timeline data, social links
+│   └── data.ts            
 │
 └── types/
-    └── index.ts            # Shared TypeScript interfaces
+    └── index.ts            
 ```
  
 ---
