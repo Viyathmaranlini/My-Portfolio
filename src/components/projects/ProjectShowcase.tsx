@@ -13,7 +13,7 @@ export default function ProjectShowcase() {
       {/* Data Science & ML */}
       <div className="mb-14">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-1 h-7 rounded-full bg-gradient-to-b from-purple-500 to-blue-500" />
+          <div className="w-1 h-7 rounded-full bg-gradient-to-b from-emerald-500 to-cyan-500" />
           <h3 className="text-xl font-semibold">Data Science & ML</h3>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
