@@ -12,7 +12,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Your Name — Portfolio",
+  title: "Viyathma - Portfolio",
   description: "Full-stack developer portfolio",
 };
 
