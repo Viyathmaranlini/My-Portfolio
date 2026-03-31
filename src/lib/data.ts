@@ -7,7 +7,7 @@ export const dsProjects: Project[] = [
     title: "Sri Lanka Economic Analysis",
     description:
       "📊 Comprehensive EDA of Sri Lanka's economic indicators (2000–2024) with interactive Plotly visualizations, correlation analysis & era-based comparison.",
-    image: "/projects/sri-lanka-eda.png",
+    image: "/projects/sri-lanka-eda.jpeg",
     tags: ["Python", "Pandas", "Plotly", "Matplotlib", "Seaborn"],
     liveUrl:
       "https://nbviewer.org/github/Viyathmaranlini/sri-lanka-economic-analysis/blob/main/notebooks/03_interactive_visualizations.ipynb",
