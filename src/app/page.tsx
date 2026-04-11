@@ -6,13 +6,21 @@ import AboutSection from "@/components/about/AboutSection";
 import CertificateSection from "@/components/certificates/CertificateSection";
 import ContactSection from "@/components/contact/ContactSection";
 import { Certificate } from "crypto";
+import ParticleBackground from "@/components/effects/ParticleBackground";
+import CursorGlow from "@/components/effects/CursorGlow";
+import ScrollProgress from "@/components/effects/ScrollProgress";
+import StatsSection from "@/components/effects/StatsSection";
 
 export default function Home() {
   return (
     <>
+      <ParticleBackground />
+      <CursorGlow />
+      <ScrollProgress />
       <Navbar />
       <main>
         <HeroSection />
+        <StatsSection />
         <TechSection />
         <ProjectShowcase />
         <AboutSection />

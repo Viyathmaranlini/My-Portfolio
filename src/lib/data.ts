@@ -98,6 +98,7 @@ export const timeline: TimelineEntry[] = [
     description:
       "Engaged in mathematical problem-solving sessions and statistical analysis workshops since July 2023, strengthening analytical thinking skills.",
     type: "volunteer",
+    image: "/volunteer/math-circle.jpg",
   },
 ];
 

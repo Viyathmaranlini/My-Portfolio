@@ -32,7 +32,7 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#hero" className="text-xl font-bold text-primary">
-          YN<span className="text-white">.</span>
+         VA<span className="text-white">.</span>
         </a>
 
         {/* Desktop nav */}
