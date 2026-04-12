@@ -89,7 +89,7 @@ src/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/my-portfolio.git
+git clone https://github.com/Viyathmaranlini/my-portfolio.git
 
 # Navigate to project directory
 cd my-portfolio
@@ -138,9 +138,9 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Viyathma Arukgoda**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Viyathma Arukgoda](https://linkedin.com/in/yourusername)
-- Email: your@email.com
+- GitHub: [@Viyathmaranlini](https://github.com/Viyathmaranlini)
+- LinkedIn: [Viyathma Arukgoda](https://www.linkedin.com/in/viyathma-arukgoda/)
+- Email: viyathmaawa@gmail.com
 
 ---
 
