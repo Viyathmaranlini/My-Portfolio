@@ -39,7 +39,9 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.8 }}
           >
             <MagneticButton>
-              <a href="#technologies" className="inline-block px-8 py-3 border-2 border-primary text-primary rounded-lg font-mono hover:bg-primary/10 transition-colors">View My Work</a>
+              <a href="#technologies" className="inline-block px-8 py-3 border-2 border-primary text-primary rounded-lg font-mono hover:bg-primary/10 transition-colors">
+                View My Work
+              </a>
             </MagneticButton>
           </motion.div>
         </div>
@@ -50,8 +52,8 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           <div className="relative w-72 h-72 md:w-96 md:h-96">
-            <div className="absolute -inset-2 rounded-full bg-linear-to-r from-primary via-emerald-300 to-primary opacity-75 blur-md animate-spin-slow" />
-            <div className="absolute -inset-1 rounded-full bg-linear-to-r from-primary via-emerald-300 to-primary opacity-50 blur-sm animate-pulse" />
+            <div className="absolute -inset-2 rounded-full bg-linear-to-r from-indigo-500 via-purple-400 to-blue-500 opacity-75 blur-md animate-spin-slow" />
+            <div className="absolute -inset-1 rounded-full bg-linear-to-r from-indigo-500 via-purple-400 to-blue-500 opacity-50 blur-sm animate-pulse" />
             <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-primary/50">
               <Image src="/profile.jpg" alt="Viyathma Arukgoda" fill className="object-cover" priority />
             </div>

@@ -12,7 +12,28 @@ export default function ParticleBackground() {
     if (!ctx) return;
 
     let animationId: number;
-    let particles: { x: number; y: number; vx: number; vy: number; size: number; opacity: number }[] = [];
+
+    interface Star {
+      x: number;
+      y: number;
+      size: number;
+      opacity: number;
+      twinkleSpeed: number;
+      twinkleOffset: number;
+    }
+
+    interface ShootingStar {
+      x: number;
+      y: number;
+      length: number;
+      speed: number;
+      opacity: number;
+      angle: number;
+      active: boolean;
+    }
+
+    const stars: Star[] = [];
+    const shootingStars: ShootingStar[] = [];
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -21,46 +42,99 @@ export default function ParticleBackground() {
     resize();
     window.addEventListener("resize", resize);
 
-    // Create particles
-    for (let i = 0; i < 80; i++) {
-      particles.push({
+    for (let i = 0; i < 200; i++) {
+      stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 2 + 1,
-        opacity: Math.random() * 0.5 + 0.1,
+        size: Math.random() * 2 + 0.5,
+        opacity: Math.random() * 0.8 + 0.2,
+        twinkleSpeed: Math.random() * 0.02 + 0.01,
+        twinkleOffset: Math.random() * Math.PI * 2,
       });
     }
 
+    const createShootingStar = (): ShootingStar => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height * 0.5,
+      length: Math.random() * 80 + 40,
+      speed: Math.random() * 8 + 4,
+      opacity: 1,
+      angle: Math.PI / 4 + (Math.random() - 0.5) * 0.3,
+      active: true,
+    });
+
+    let time = 0;
+
     const animate = () => {
+      time += 0.016;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      particles.forEach((p, i) => {
-        p.x += p.vx;
-        p.y += p.vy;
+      const gradient = ctx.createRadialGradient(
+        canvas.width * 0.3, canvas.height * 0.3, 0,
+        canvas.width * 0.3, canvas.height * 0.3, canvas.width * 0.8
+      );
+      gradient.addColorStop(0, "rgba(88, 28, 135, 0.15)");
+      gradient.addColorStop(0.5, "rgba(15, 23, 42, 0.1)");
+      gradient.addColorStop(1, "transparent");
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+      const gradient2 = ctx.createRadialGradient(
+        canvas.width * 0.7, canvas.height * 0.6, 0,
+        canvas.width * 0.7, canvas.height * 0.6, canvas.width * 0.5
+      );
+      gradient2.addColorStop(0, "rgba(30, 64, 175, 0.1)");
+      gradient2.addColorStop(1, "transparent");
+      ctx.fillStyle = gradient2;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      stars.forEach((star) => {
+        const twinkle = Math.sin(time * star.twinkleSpeed * 60 + star.twinkleOffset) * 0.5 + 0.5;
+        const currentOpacity = star.opacity * (0.5 + twinkle * 0.5);
 
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(52, 211, 153, ${p.opacity})`;
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        ctx.fillStyle = star.size > 1.5
+          ? "rgba(192, 132, 252, " + currentOpacity + ")"
+          : "rgba(255, 255, 255, " + currentOpacity + ")";
         ctx.fill();
 
-        // Connect nearby particles
-        particles.slice(i + 1).forEach((p2) => {
-          const dx = p.x - p2.x;
-          const dy = p.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 120) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(52, 211, 153, ${0.1 * (1 - dist / 120)})`;
-            ctx.stroke();
-          }
-        });
+        if (star.size > 1.8) {
+          ctx.beginPath();
+          ctx.arc(star.x, star.y, star.size * 3, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(129, 140, 248, " + currentOpacity * 0.1 + ")";
+          ctx.fill();
+        }
+      });
+
+      if (Math.random() < 0.005) {
+        shootingStars.push(createShootingStar());
+      }
+
+      shootingStars.forEach((ss) => {
+        if (!ss.active) return;
+        ss.x += Math.cos(ss.angle) * ss.speed;
+        ss.y += Math.sin(ss.angle) * ss.speed;
+        ss.opacity -= 0.015;
+
+        if (ss.opacity <= 0) {
+          ss.active = false;
+          return;
+        }
+
+        const tailX = ss.x - Math.cos(ss.angle) * ss.length;
+        const tailY = ss.y - Math.sin(ss.angle) * ss.length;
+
+        const grad = ctx.createLinearGradient(tailX, tailY, ss.x, ss.y);
+        grad.addColorStop(0, "rgba(255, 255, 255, 0)");
+        grad.addColorStop(1, "rgba(255, 255, 255, " + ss.opacity + ")");
+
+        ctx.beginPath();
+        ctx.moveTo(tailX, tailY);
+        ctx.lineTo(ss.x, ss.y);
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = 2;
+        ctx.stroke();
       });
 
       animationId = requestAnimationFrame(animate);
@@ -73,10 +147,5 @@ export default function ParticleBackground() {
     };
   }, []);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 z-0 pointer-events-none"
-    />
-  );
+  return <canvas ref={canvasRef} className="fixed inset-0 z-0 pointer-events-none" />;
 }
