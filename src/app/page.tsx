@@ -1,8 +1,8 @@
 import Navbar from "@/components/layout/Navbar";
 import HeroSection from "@/components/hero/HeroSection";
+import AboutSection from "@/components/about/AboutSection";
 import TechSection from "@/components/technologies/TechSection";
 import ProjectShowcase from "@/components/projects/ProjectShowcase";
-import AboutSection from "@/components/about/AboutSection";
 import CertificateSection from "@/components/certificates/CertificateSection";
 import ContactSection from "@/components/contact/ContactSection";
 import { Certificate } from "crypto";
@@ -20,10 +20,10 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <AboutSection />
         <StatsSection />
         <TechSection />
         <ProjectShowcase />
-        <AboutSection />
         <CertificateSection />
         <ContactSection />
       </main>

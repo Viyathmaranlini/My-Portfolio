@@ -50,17 +50,6 @@ export const webProjects: Project[] = [
     githubUrl:
       "https://github.com/Viyathmaranlini/Organic-Food-Website",
   },
-  {
-    id: 8,
-    title: "MoodFlix App",
-    description:
-      "MoodFlix is an innovative web application designed to enhance the digital entertainment experience by recommending movies and TV shows based on the user's emotional state.",
-    image: "/projects/MoodFlix.jpeg",
-    tags: ["JavaScript"],
-    liveUrl: "https://example.com",
-    githubUrl:
-      "https://github.com/Viyathmaranlini/MoodFlix-App-main",
-  },
 ];
 
 // ─── Timeline ───
