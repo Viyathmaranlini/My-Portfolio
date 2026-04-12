@@ -110,27 +110,32 @@ npm run build
 npm run start
 ```
 
-## 📸 Screenshots
 
 ## 📸 Screenshots
 
 ### Hero Section
-![Hero Section](public/screenshots/hero.png)
+<img width="1600" height="746" alt="image" src="https://github.com/user-attachments/assets/3e567ecf-d5f4-4e5f-a14a-9ecc2a4b02bc" />
+
 
 ### Technologies
-![Technologies](public/screenshots/technologies.png)
+<img width="1506" height="855" alt="image" src="https://github.com/user-attachments/assets/00ad7c51-e483-4495-8782-446469dbbf49" />
+
 
 ### Projects
-![Projects](public/screenshots/projects.png)
+<img width="1474" height="819" alt="image" src="https://github.com/user-attachments/assets/e45393a3-b3d3-4ae6-98e7-21b9431d97aa" />
+
 
 ### About Me
-![About Me](public/screenshots/about.png)
+<img width="1583" height="847" alt="image" src="https://github.com/user-attachments/assets/7db6ec08-39d9-4f4c-9741-8933f59be544" />
+
 
 ### Certificates
-![Certificates](public/screenshots/certificates.png)
+<img width="1600" height="712" alt="image" src="https://github.com/user-attachments/assets/c7d7650b-2a27-4e30-ad1c-d6cca63be916" />
+
 
 ### Contact
-![Contact](public/screenshots/contact.png)
+<img width="1600" height="745" alt="image" src="https://github.com/user-attachments/assets/beca60dc-eab3-4268-9be1-e980f4a4b09d" />
+
 
 ## 🎨 Sections
 
