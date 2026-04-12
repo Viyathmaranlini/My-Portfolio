@@ -1,45 +1,147 @@
-## 🌐 Personal Portfolio Website
-📌 Overview
+# 🌌 Personal Portfolio Website
 
-This project is my personal portfolio website, designed to showcase my background, technical skills, and projects as a Computer Science undergraduate and aspiring full-stack developer.
+## 📌 Overview
 
-The website presents information about my education, skills, and featured projects in a clean and modern layout. It serves as a professional online presence where visitors can learn more about my work and connect with me.
+A modern, interactive portfolio website built with **Next.js 16**, **TypeScript**, **Tailwind CSS v4**, and **Framer Motion**. Features a stunning galaxy-themed design with twinkling stars, shooting star animations, and premium interactive effects.
 
-## Project Structure
- 
+Built as a professional online presence to showcase my education, technical skills, volunteering experience, certifications, and projects as a Computer Science undergraduate at NSBM Green University.
+
+🔗 **Live Demo:** [Coming Soon]
+
+## ✨ Features
+
+- **Galaxy Theme** — Deep space background with twinkling stars, nebula gradients, and shooting star animations
+- **Interactive Effects** — Cursor glow, magnetic buttons, scroll progress bar, and animated counters
+- **Responsive Design** — Fully optimized for desktop, tablet, and mobile devices
+- **Smooth Animations** — Page transitions and scroll-based animations powered by Framer Motion
+- **Dynamic Content** — Filterable technology grid, timeline with photo cards, and project showcase
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| Next.js 16 | React framework with App Router |
+| TypeScript | Type-safe development |
+| Tailwind CSS v4 | Utility-first styling |
+| Framer Motion | Animations and transitions |
+| React Icons | Icon library |
+
+## 📁 Project Structure
+
 ```
 src/
 ├── app/
-│   ├── layout.tsx          
-│   ├── page.tsx            
-│   └── globals.css        
+│   ├── layout.tsx                # Root layout with fonts and metadata
+│   ├── page.tsx                  # Home page — assembles all sections
+│   └── globals.css               # Tailwind config and galaxy theme
+│
 ├── components/
 │   ├── layout/
-│   │   ├── Navbar.tsx      
-│   │   ├── Footer.tsx
-│   │   └── SectionWrapper.tsx  
+│   │   ├── Navbar.tsx            # Fixed navigation with mobile menu
+│   │   └── SectionWrapper.tsx    # Reusable scroll-animated wrapper
 │   │
 │   ├── hero/
-│   │   ├── HeroSection.tsx     
-│   │   └── HeroScene.tsx      
+│   │   └── HeroSection.tsx       # Hero with profile photo and glow ring
+│   │
+│   ├── technologies/
+│   │   └── TechSection.tsx       # Filterable skills grid with progress bars
 │   │
 │   ├── projects/
-│   │   ├── ProjectShowcase.tsx 
-│   │   └── ProjectCard.tsx     
+│   │   ├── ProjectShowcase.tsx   # Project grid with Coming Soon cards
+│   │   └── ProjectCard.tsx       # Individual project card component
 │   │
 │   ├── about/
-│   │   ├── AboutSection.tsx
-│   │   └── TimelineItem.tsx   
+│   │   ├── AboutSection.tsx      # About section with volunteering timeline
+│   │   └── TimelineItem.tsx      # Timeline card with photo support
 │   │
-│   └── contact/
-│       ├── ContactSection.tsx
-│       └── ContactForm.tsx
+│   ├── certificates/
+│   │   ├── CertificateSection.tsx # Certificates grid
+│   │   └── CertificateCard.tsx    # Certificate card with skills tags
+│   │
+│   ├── contact/
+│   │   ├── ContactSection.tsx    # Contact section with social links
+│   │   └── ContactForm.tsx       # Contact form with validation
+│   │
+│   └── effects/
+│       ├── ParticleBackground.tsx # Galaxy stars and shooting stars
+│       ├── CursorGlow.tsx         # Mouse-following glow effect
+│       ├── ScrollProgress.tsx     # Top scroll progress bar
+│       ├── AnimatedCounter.tsx    # Count-up animation component
+│       ├── StatsSection.tsx       # Stats with animated counters
+│       ├── TiltCard.tsx           # 3D tilt hover effect
+│       └── MagneticButton.tsx     # Magnetic hover button effect
 │
 ├── lib/
-│   └── data.ts            
+│   └── data.ts                   # Projects, skills, timeline, and certificates data
 │
 └── types/
-    └── index.ts            
+    └── index.ts                  # TypeScript interfaces
 ```
- 
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/my-portfolio.git
+
+# Navigate to project directory
+cd my-portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Build for Production
+
+```bash
+npm run build
+npm run start
+```
+
+## 📸 Screenshots
+
+| Section | Description |
+|---|---|
+| Hero | Profile photo with animated galaxy glow ring |
+| Technologies | Filterable skill grid with animated progress bars |
+| Projects | Project cards with Coming Soon placeholders |
+| About | Volunteering timeline with photo cards |
+| Certificates | Certificate cards with skill tags and verify links |
+| Contact | Contact form with social media links |
+
+## 🎨 Sections
+
+- **Hero** — Introduction with animated profile photo and galaxy glow ring
+- **Technologies** — Interactive skill grid filterable by category (Frontend, Backend, Tools, AI/Other) with animated progress bars
+- **Projects** — Showcase of completed projects with Coming Soon cards for upcoming work
+- **About Me** — Volunteering timeline at NSBM Green University (IEEE, Hackathon Hub, Math Circle)
+- **Certificates** — Professional certifications with issuer logos and verification links
+- **Contact** — Contact form and social media links
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 📬 Contact
+
+**Viyathma Arukgoda**
+
+- GitHub: [@yourusername](https://github.com/yourusername)
+- LinkedIn: [Viyathma Arukgoda](https://linkedin.com/in/yourusername)
+- Email: your@email.com
+
 ---
+
+⭐ If you like this project, give it a star on GitHub!
