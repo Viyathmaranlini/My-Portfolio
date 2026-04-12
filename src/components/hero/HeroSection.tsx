@@ -39,7 +39,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.8 }}
           >
             <MagneticButton>
-              <a href="#technologies" className="inline-block px-8 py-3 border-2 border-primary text-primary rounded-lg font-mono hover:bg-primary/10 transition-colors">
+              <a href="#projects" className="inline-block px-8 py-3 border-2 border-primary text-primary rounded-lg font-mono hover:bg-primary/10 transition-colors">
                 View My Work
               </a>
             </MagneticButton>
