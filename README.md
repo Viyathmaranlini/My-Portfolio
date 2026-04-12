@@ -6,7 +6,7 @@ A modern, interactive portfolio website built with **Next.js 16**, **TypeScript*
 
 Built as a professional online presence to showcase my education, technical skills, volunteering experience, certifications, and projects as a Computer Science undergraduate at NSBM Green University.
 
-🔗 **Live Demo:** [Coming Soon]
+🔗 **Live Demo:** my-portfolio-rosy-alpha-64.vercel.app
 
 ## ✨ Features
 
