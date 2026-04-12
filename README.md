@@ -112,14 +112,25 @@ npm run start
 
 ## 📸 Screenshots
 
-| Section | Description |
-|---|---|
-| Hero | Profile photo with animated galaxy glow ring |
-| Technologies | Filterable skill grid with animated progress bars |
-| Projects | Project cards with Coming Soon placeholders |
-| About | Volunteering timeline with photo cards |
-| Certificates | Certificate cards with skill tags and verify links |
-| Contact | Contact form with social media links |
+## 📸 Screenshots
+
+### Hero Section
+![Hero Section](public/screenshots/hero.png)
+
+### Technologies
+![Technologies](public/screenshots/technologies.png)
+
+### Projects
+![Projects](public/screenshots/projects.png)
+
+### About Me
+![About Me](public/screenshots/about.png)
+
+### Certificates
+![Certificates](public/screenshots/certificates.png)
+
+### Contact
+![Contact](public/screenshots/contact.png)
 
 ## 🎨 Sections
 
