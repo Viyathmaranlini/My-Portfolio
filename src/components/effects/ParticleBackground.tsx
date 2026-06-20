@@ -42,12 +42,12 @@ export default function ParticleBackground() {
     resize();
     window.addEventListener("resize", resize);
 
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < 150; i++) {
       stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 2 + 0.5,
-        opacity: Math.random() * 0.8 + 0.2,
+        size: Math.random() * 2 + 0.3,
+        opacity: Math.random() * 0.6 + 0.1,
         twinkleSpeed: Math.random() * 0.02 + 0.01,
         twinkleOffset: Math.random() * Math.PI * 2,
       });
@@ -55,7 +55,7 @@ export default function ParticleBackground() {
 
     const createShootingStar = (): ShootingStar => ({
       x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height * 0.5,
+      y: Math.random() * canvas.height * 0.4,
       length: Math.random() * 80 + 40,
       speed: Math.random() * 8 + 4,
       opacity: 1,
@@ -70,44 +70,45 @@ export default function ParticleBackground() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       const gradient = ctx.createRadialGradient(
-        canvas.width * 0.3, canvas.height * 0.3, 0,
-        canvas.width * 0.3, canvas.height * 0.3, canvas.width * 0.8
+        canvas.width * 0.2, canvas.height * 0.3, 0,
+        canvas.width * 0.2, canvas.height * 0.3, canvas.width * 0.6
       );
-      gradient.addColorStop(0, "rgba(88, 28, 135, 0.15)");
-      gradient.addColorStop(0.5, "rgba(15, 23, 42, 0.1)");
+      gradient.addColorStop(0, "rgba(6, 214, 160, 0.03)");
+      gradient.addColorStop(0.5, "rgba(56, 189, 248, 0.02)");
       gradient.addColorStop(1, "transparent");
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       const gradient2 = ctx.createRadialGradient(
-        canvas.width * 0.7, canvas.height * 0.6, 0,
-        canvas.width * 0.7, canvas.height * 0.6, canvas.width * 0.5
+        canvas.width * 0.8, canvas.height * 0.5, 0,
+        canvas.width * 0.8, canvas.height * 0.5, canvas.width * 0.5
       );
-      gradient2.addColorStop(0, "rgba(30, 64, 175, 0.1)");
+      gradient2.addColorStop(0, "rgba(168, 85, 247, 0.04)");
       gradient2.addColorStop(1, "transparent");
       ctx.fillStyle = gradient2;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       stars.forEach((star) => {
         const twinkle = Math.sin(time * star.twinkleSpeed * 60 + star.twinkleOffset) * 0.5 + 0.5;
-        const currentOpacity = star.opacity * (0.5 + twinkle * 0.5);
+        const currentOpacity = star.opacity * (0.4 + twinkle * 0.6);
 
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-        ctx.fillStyle = star.size > 1.5
-          ? "rgba(192, 132, 252, " + currentOpacity + ")"
-          : "rgba(255, 255, 255, " + currentOpacity + ")";
+
+        const colors = ["rgba(6, 214, 160,", "rgba(56, 189, 248,", "rgba(168, 85, 247,", "rgba(255, 255, 255,"];
+        const color = star.size > 1.5 ? colors[Math.floor(star.twinkleOffset) % 3] : colors[3];
+        ctx.fillStyle = color + currentOpacity + ")";
         ctx.fill();
 
         if (star.size > 1.8) {
           ctx.beginPath();
-          ctx.arc(star.x, star.y, star.size * 3, 0, Math.PI * 2);
-          ctx.fillStyle = "rgba(129, 140, 248, " + currentOpacity * 0.1 + ")";
+          ctx.arc(star.x, star.y, star.size * 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = color + (currentOpacity * 0.08) + ")";
           ctx.fill();
         }
       });
 
-      if (Math.random() < 0.005) {
+      if (Math.random() < 0.003) {
         shootingStars.push(createShootingStar());
       }
 
@@ -126,14 +127,14 @@ export default function ParticleBackground() {
         const tailY = ss.y - Math.sin(ss.angle) * ss.length;
 
         const grad = ctx.createLinearGradient(tailX, tailY, ss.x, ss.y);
-        grad.addColorStop(0, "rgba(255, 255, 255, 0)");
-        grad.addColorStop(1, "rgba(255, 255, 255, " + ss.opacity + ")");
+        grad.addColorStop(0, "rgba(6, 214, 160, 0)");
+        grad.addColorStop(1, "rgba(6, 214, 160, " + ss.opacity + ")");
 
         ctx.beginPath();
         ctx.moveTo(tailX, tailY);
         ctx.lineTo(ss.x, ss.y);
         ctx.strokeStyle = grad;
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 1.5;
         ctx.stroke();
       });
 

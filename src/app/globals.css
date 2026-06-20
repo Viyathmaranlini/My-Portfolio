@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #818cf8;
-  --color-secondary: #38bdf8;
-  --color-accent: #c084fc;
-  --color-background: #030014;
-  --color-surface: #0a0a2e;
-  --color-muted: #7a7aad;
+  --color-primary: #06d6a0;
+  --color-secondary: #a855f7;
+  --color-accent: #38bdf8;
+  --color-background: #0b0d17;
+  --color-surface: #111427;
+  --color-surface-light: #1a1d35;
+  --color-muted: #7a7fa8;
+  --color-border: rgba(255, 255, 255, 0.06);
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 }
@@ -24,7 +26,7 @@
     width: 6px;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: rgba(129, 140, 248, 0.4);
+    background-color: rgba(6, 214, 160, 0.4);
     border-radius: 9999px;
   }
 }
@@ -33,4 +35,15 @@
   .animate-spin-slow {
     animation: spin 6s linear infinite;
   }
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  .animate-float-delayed {
+    animation: float 3s ease-in-out 1.5s infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }

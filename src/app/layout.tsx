@@ -12,8 +12,23 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Viyathma - Portfolio",
-  description: "Full-stack developer portfolio",
+  title: "Viyathma Arukgoda - Portfolio",
+  description: "Computer Science undergraduate at NSBM Green University. Skilled in Python, JavaScript, C#, and full-stack web development with a strong interest in AI and machine learning.",
+  openGraph: {
+    title: "Viyathma Arukgoda - Portfolio",
+    description: "Computer Science undergraduate | Full-stack Developer | AI Enthusiast",
+    url: "https://my-portfolio-rosy-alpha-64.vercel.app",
+    siteName: "Viyathma Arukgoda Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Viyathma Arukgoda Portfolio",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
