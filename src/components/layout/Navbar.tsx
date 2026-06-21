@@ -7,8 +7,8 @@ import { FiGithub, FiLinkedin } from "react-icons/fi";
 
 const navItems = [
   { label: "Home", href: "#hero" },
-  { label: "Skills", href: "#technologies" },
   { label: "About", href: "#about" },
+  { label: "Skills", href: "#technologies" },
   { label: "Projects", href: "#projects" },
   { label: "Certificates", href: "#certificates" },
   { label: "Contact", href: "#contact" },

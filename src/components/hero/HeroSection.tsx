@@ -240,13 +240,13 @@ function GlowingProfileCard() {
               Hire Me
             </a>
             <a
-              href="https://github.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 text-center py-2.5 rounded-xl bg-surface-light border border-border text-white text-sm font-medium hover:border-primary/30 transition-colors"
-            >
-              GitHub
-            </a>
+           href="/Viyathma-Arukgoda-CV.pdf"
+  download
+  className="flex-1 text-center py-2.5 rounded-xl bg-surface-light border border-border text-white text-sm font-medium hover:border-primary/30 transition-colors"
+>
+  Download CV
+</a>
+
           </motion.div>
         </div>
       </motion.div>
