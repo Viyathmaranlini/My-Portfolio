@@ -3,9 +3,9 @@ import { Project, TimelineEntry, Certificate, Skill } from "@/types";
 export const projects: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "Haritha TV",
     description: "Full-stack e-commerce app with Stripe payments and admin dashboard.",
-    image: "https://placehold.co/600x400/0a0a2e/06d6a0?text=E-Commerce",
+    image: "https://placehold.co/600x400/0a0a2e/06d6a0?text=Haritha+TV",
     tags: ["Next.js", "Prisma", "Stripe"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/you/project",

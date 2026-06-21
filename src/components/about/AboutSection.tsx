@@ -4,18 +4,28 @@ import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
 import SectionWrapper from "@/components/layout/SectionWrapper";
-import { FiChevronLeft, FiChevronRight, FiBookOpen, FiUsers, FiHeart, FiAward, FiCode, FiTarget } from "react-icons/fi";
+import { FiChevronLeft, FiChevronRight, FiBookOpen, FiUsers, FiHeart, FiAward, FiCode, FiTarget, FiUser } from "react-icons/fi";
 
 const stories = [
+  {
+    id: 0,
+    tag: "About Me",
+    icon: FiUser,
+    title: "Who I Am",
+    subtitle: "Computer Science Undergraduate",
+    description: "I'm a Computer Science undergraduate passionate about Data Analytics, Machine Learning, and Cloud Computing. I enjoy solving real-world problems through technology and building impactful software solutions that turn data into actionable insights.",
+    image: "/volunteer/profile.jpg",
+    color: "from-primary to-accent",
+  },
   {
     id: 1,
     tag: "Education",
     icon: FiBookOpen,
     title: "NSBM Green University",
     subtitle: "BSc (Hons) in Computer Science",
-    description: "Currently pursuing my undergraduate degree with a focus on software engineering, data science, and AI/ML applications. Building a strong foundation in algorithms, databases, and system design.",
-    image: "/volunteer/ieee-member.jpg",
-    color: "from-primary to-accent",
+    description: "Currently pursuing a BSc (Hons) in Computer Science with interests in Data Analytics, Machine Learning, Cloud Computing, and Software Engineering. Building strong foundations in algorithms, databases, and modern software development practices.",
+    image: "/volunteer/nsbm.jpg",
+    color: "from-accent to-secondary",
     year: "2023 - Present",
   },
   {
@@ -24,9 +34,9 @@ const stories = [
     icon: FiUsers,
     title: "IEEE Student Branch",
     subtitle: "Program Team Member",
-    description: "Organized IEEE Day 2023 event activities. Active member participating in tech workshops, networking events, and collaborative projects within the IEEE community since June 2023.",
+    description: "Organized IEEE Day 2023 event activities as a Program Team Member. Participated in technical workshops, networking events, and collaborative projects while contributing to student-led technology initiatives since June 2023.",
     image: "/volunteer/ieee-day.jpg",
-    color: "from-accent to-secondary",
+    color: "from-secondary to-primary",
     year: "2023",
   },
   {
@@ -35,9 +45,9 @@ const stories = [
     icon: FiCode,
     title: "AlgoXplore 1.0",
     subtitle: "Marketing Team Member",
-    description: "Contributed to the marketing campaign for AlgoXplore 1.0 at Hackathon Hub NSBM. Promoted the hackathon across social media and university channels to drive participant registrations.",
+    description: "Contributed to the marketing strategy for AlgoXplore 1.0 at Hackathon Hub NSBM. Led social media campaigns and coordinated with university channels to successfully drive participant registrations and event awareness.",
     image: "/volunteer/algoxplore.jpg",
-    color: "from-secondary to-primary",
+    color: "from-primary to-secondary",
     year: "2024",
   },
   {
@@ -46,31 +56,31 @@ const stories = [
     icon: FiAward,
     title: "Math & Statistics Circle",
     subtitle: "Active Member",
-    description: "Engaged in mathematical problem-solving sessions and statistical analysis workshops. Strengthening analytical thinking skills that complement my data science journey.",
+    description: "Engaged in mathematical problem-solving sessions and statistical analysis workshops. Developing analytical thinking and quantitative reasoning skills that directly complement my data science and machine learning journey.",
     image: "/volunteer/math-circle.jpg",
-    color: "from-primary to-secondary",
+    color: "from-accent to-primary",
     year: "2023 - Present",
   },
   {
     id: 5,
-    tag: "Interests",
+    tag: "Passion",
     icon: FiHeart,
     title: "What Drives Me",
-    subtitle: "Passion & Goals",
-    description: "Passionate about exploring AI/ML applications in data-driven systems. I love turning complex data into actionable insights and building full-stack solutions that make a real difference.",
+    subtitle: "Curiosity & Impact",
+    description: "I'm fascinated by how data can reveal meaningful patterns and support better decisions. My passion lies in combining analytics, machine learning, and software development to create solutions that solve real-world challenges.",
     image: "",
-    color: "from-accent to-primary",
+    color: "from-secondary to-accent",
     year: "",
   },
   {
     id: 6,
-    tag: "Goals",
+    tag: "Vision",
     icon: FiTarget,
     title: "Where I'm Heading",
-    subtitle: "Future Vision",
-    description: "Aspiring to become a full-stack developer specializing in AI-powered applications. Currently building expertise in cloud computing, machine learning, and scalable web architectures.",
+    subtitle: "Future Goals",
+    description: "Aspiring to build a career in Data Analytics, Machine Learning, and Cloud Computing. Currently developing expertise in data-driven decision making, predictive modeling, and scalable cloud technologies.",
     image: "",
-    color: "from-secondary to-accent",
+    color: "from-primary to-accent",
     year: "",
   },
 ];
@@ -109,23 +119,19 @@ function StoryCard({ story, index }: { story: typeof stories[0]; index: number }
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <div className="group relative h-full bg-surface rounded-2xl border border-border overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary/5">
-        {/* Top gradient accent */}
         <div className={`h-1 w-full bg-linear-to-r ${story.color}`} />
 
-        {/* Hover gradient overlay */}
         <div className="absolute inset-0 bg-linear-to-br from-primary/3 via-transparent to-secondary/3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-        {/* Image or Icon Hero */}
         {story.image ? (
           <div className="relative h-44 overflow-hidden">
             <Image
               src={story.image}
               alt={story.title}
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-110"
+             className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-linear-to-t from-surface via-surface/40 to-transparent" />
-            {/* Tag on image */}
             <div className="absolute top-4 left-4 flex items-center gap-2">
               <div className={`w-8 h-8 rounded-lg bg-linear-to-br ${story.color} flex items-center justify-center`}>
                 <Icon size={14} className="text-white" />
@@ -157,10 +163,16 @@ function StoryCard({ story, index }: { story: typeof stories[0]; index: number }
                 {story.tag}
               </span>
             </div>
+            {story.year && (
+              <div className="absolute top-4 right-4">
+                <span className="text-xs font-mono text-primary bg-surface/60 backdrop-blur-sm px-2.5 py-1 rounded-full border border-primary/20">
+                  {story.year}
+                </span>
+              </div>
+            )}
           </div>
         )}
 
-        {/* Content */}
         <div className="relative p-6">
           <h3 className="text-lg font-bold text-white group-hover:text-primary transition-colors">
             {story.title}
@@ -230,11 +242,10 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Swipe through the chapters of my journey — from education to passions and future goals
+            Swipe through the chapters of my journey — from who I am to where I'm heading
           </motion.p>
         </div>
 
-        {/* Navigation Arrows */}
         <div className="flex justify-end gap-2 mb-6 px-6">
           <motion.button
             onClick={() => scroll("left")}
@@ -263,7 +274,6 @@ export default function AboutSection() {
         </div>
       </div>
 
-      {/* Horizontal Scroll Container */}
       <div
         ref={scrollRef}
         onScroll={checkScroll}
@@ -275,14 +285,11 @@ export default function AboutSection() {
         ))}
       </div>
 
-      {/* Scroll indicator dots */}
       <div className="flex justify-center gap-1.5 mt-6">
         {stories.map((_, i) => (
           <div
             key={i}
-            className={`w-1.5 h-1.5 rounded-full transition-colors ${
-              i === 0 ? "bg-primary" : "bg-muted/30"
-            }`}
+            className="w-1.5 h-1.5 rounded-full bg-muted/30"
           />
         ))}
       </div>
