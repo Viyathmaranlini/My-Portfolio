@@ -2,10 +2,11 @@ export interface Project {
   id: number;
   title: string;
   description: string;
-  image: string;       
+  image: string;
   tags: string[];
   liveUrl?: string;
   githubUrl?: string;
+  category: "fullstack" | "ml" | "cloud" | "data" | "coming-soon";
 }
 
 export interface TimelineEntry {

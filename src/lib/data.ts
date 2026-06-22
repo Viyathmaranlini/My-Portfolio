@@ -9,6 +9,7 @@ export const projects: Project[] = [
     tags: ["php", "html", "css", "javascript"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/Viyathmaranlini/Haritha-TV",
+    category: "fullstack",
   },
   {
     id: 2,
@@ -17,6 +18,7 @@ export const projects: Project[] = [
     image: "/projects/srilanka-eda.jpg",
     tags: ["Python", "pandas", "numpy", "matplotlib", "seaborn", "plotly", "jupyter notebook"],
     githubUrl: "https://github.com/Viyathmaranlini/Sri-Lanka-Economic-Analysis",
+    category: "data",
   },
   {
     id: 3,
@@ -25,20 +27,24 @@ export const projects: Project[] = [
     image: "/projects/pizza-heaven.jpg",
     tags: ["html", "css", "javascript"],
     githubUrl: "https://github.com/Viyathmaranlini/PizzaHeaven",
+    category: "fullstack",
   },
   {
     id: 4,
-    title: "Coming Soon",
-    description: "Something exciting is in the works. Stay tuned!",
+    title: "News Sentiment Analysis",
+    description: "A machine learning project that analyzes news articles to determine their sentiment (positive, negative, or neutral) using NLP techniques.",
     image: "/projects/coming-soon.jpg",
     tags: [],
+    category: "ml",
   },
+    
   {
     id: 5,
     title: "Coming Soon",
     description: "Another project brewing. Watch this space!",
     image: "/projects/coming-soon.jpg",
     tags: [],
+    category: "coming-soon",
   },
 ];
 
