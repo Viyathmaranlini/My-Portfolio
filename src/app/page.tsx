@@ -24,7 +24,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <TechSection />
-        <ProjectShowcase />
+        <ProjectShowcase /> 
         <CertificateSection />
         <ContactSection />
       </main>
