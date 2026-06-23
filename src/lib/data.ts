@@ -86,17 +86,17 @@ export const timeline: TimelineEntry[] = [
 export const certificates: Certificate[] = [
   {
     id: 1,
-    title: "Your Certificate Name",
-    issuer: "Coursera",
-    date: "2024",
+    title: "Oracle Cloud Infrastructure",
+    issuer: "Oracle",
+    date: "2025",
     image: "/certificates/cert1.jpg",
     skills: ["Python", "Machine Learning"],
     credentialUrl: "https://coursera.org/verify/xxx",
   },
   {
     id: 2,
-    title: "Another Certificate",
-    issuer: "Udemy",
+    title: "Angular",
+    issuer: "Sololearn",
     date: "2023",
     image: "/certificates/cert2.jpg",
     skills: ["React", "Next.js"],

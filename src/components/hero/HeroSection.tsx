@@ -240,7 +240,7 @@ function GlowingProfileCard() {
               Hire Me
             </a>
             <a
-           href="/Viyathma-Arukgoda-CV.pdf"
+           href="/Viyathma-Arukgoda-CV-Resume.pdf"
   download
   className="flex-1 text-center py-2.5 rounded-xl bg-surface-light border border-border text-white text-sm font-medium hover:border-primary/30 transition-colors"
 >
