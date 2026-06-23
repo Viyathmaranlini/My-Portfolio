@@ -31,11 +31,11 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: "News Sentiment Analysis",
-    description: "A machine learning project that analyzes news articles to determine their sentiment (positive, negative, or neutral) using NLP techniques.",
-    image: "/projects/coming-soon.jpg",
-    tags: [],
-    category: "ml",
+    title: "Livora",
+    description: "A full-stack, web-based furniture design platform built for in-store designers to create, visualize, and present room layouts in 2D and 3D — helping customers make confident, informed furniture choices.",
+    image: "/projects/livora.jpg",
+    tags: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Express.js", "MongoDB Atlas", "Three.js + React Three Fiber"],
+    category: "fullstack",
   },
     
   {
@@ -99,6 +99,36 @@ export const certificates: Certificate[] = [
     issuer: "Udemy",
     date: "2023",
     image: "/certificates/cert2.jpg",
+    skills: ["React", "Next.js"],
+    credentialUrl: "https://udemy.com/certificate/xxx",  
+  },
+
+  {
+    id: 3,
+    title: "Python for Beginners",
+    issuer: "University of Moratuwa",
+    date: "2026",
+    image: "/certificates/cert3.jpg",
+    skills: ["python"],
+    credentialUrl: "",  
+  },
+
+  {
+    id: 4,
+    title: "Postman API Fundamentals",
+    issuer: "postman",
+    date: "2024",
+    image: "/certificates/cert4.jpg",
+    skills: ["React", "Next.js"],
+    credentialUrl: "https://udemy.com/certificate/xxx",  
+  },
+
+  {
+    id: 5,
+    title: "Business Analysis",
+    issuer: "Alison",
+    date: "2026",
+    image: "/certificates/cert5.jpg",
     skills: ["React", "Next.js"],
     credentialUrl: "https://udemy.com/certificate/xxx",  
   },
