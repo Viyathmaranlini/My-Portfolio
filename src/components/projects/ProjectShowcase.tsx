@@ -11,7 +11,7 @@ const categories = [
   { key: "fullstack", label: "Full Stack", icon: "\u{1F310}" },
   { key: "ml", label: "Machine Learning", icon: "\u{1F916}" },
   { key: "data", label: "Data Analysis", icon: "\u{1F4CA}" },
-  { key: "cloud", label: "Cloud Computing", icon: "\u2601\uFE0F" },
+  { key: "cloud", label: "Cloud / DevOps", icon: "\u2601\uFE0F" },
   { key: "coming-soon", label: "Coming Soon", icon: "\u{1F680}" },
 ];
 

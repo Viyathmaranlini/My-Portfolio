@@ -15,7 +15,6 @@ export default function ProjectCard({ project, index }: Props) {
   if (!project) return null;
 
   const isComingSoon = project.title === "Coming Soon";
-  const projectNum = `Project ${index + 1}`;
   const ref = useRef<HTMLDivElement>(null);
 
   const x = useMotionValue(0.5);
@@ -46,9 +45,6 @@ export default function ProjectCard({ project, index }: Props) {
       >
         <div className="aspect-[16/10] flex flex-col items-center justify-center bg-surface-light relative overflow-hidden">
           <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-secondary/5" />
-          <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-primary/20 border border-primary/30">
-            <span className="text-xs font-mono text-primary font-medium">{projectNum}</span>
-          </div>
           <motion.div
             animate={{ rotate: [0, 10, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -83,10 +79,8 @@ export default function ProjectCard({ project, index }: Props) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <div className="relative bg-surface rounded-2xl border border-border overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10">
-        {/* Hover glow overlay */}
         <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
 
-        {/* Image */}
         <div className="relative aspect-[16/10] overflow-hidden">
           {project.image ? (
             <>
@@ -96,7 +90,6 @@ export default function ProjectCard({ project, index }: Props) {
                 fill
                 className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
               />
-              {/* Gradient overlays */}
               <div className="absolute inset-0 bg-linear-to-t from-surface via-transparent to-transparent" />
               <div className="absolute inset-0 bg-linear-to-t from-surface/90 via-surface/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </>
@@ -104,14 +97,19 @@ export default function ProjectCard({ project, index }: Props) {
             <div className="w-full h-full bg-surface-light" />
           )}
 
-          {/* Project Number Badge */}
-          <div className="absolute top-4 left-4 z-20 px-3 py-1.5 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30">
-            <span className="text-xs font-mono text-primary font-semibold">{projectNum}</span>
+          <div className="absolute top-3 left-3 flex gap-1.5 z-20">
+            {project.tags.slice(0, 2).map((tag) => (
+              <span
+                key={tag}
+                className="text-xs font-mono px-2.5 py-1 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 text-primary font-medium"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
 
-          {/* Tags - show on hover */}
           <div className="absolute bottom-4 left-4 right-4 z-20 flex flex-wrap gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-            {project.tags.slice(0, 4).map((tag) => (
+            {project.tags.slice(2, 6).map((tag) => (
               <span
                 key={tag}
                 className="text-xs font-mono px-2.5 py-1 rounded-full bg-surface/80 backdrop-blur-sm text-white border border-white/10"
@@ -119,15 +117,14 @@ export default function ProjectCard({ project, index }: Props) {
                 {tag}
               </span>
             ))}
-            {project.tags.length > 4 && (
+            {project.tags.length > 6 && (
               <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-surface/80 backdrop-blur-sm text-white border border-white/10">
-                +{project.tags.length - 4}
+                +{project.tags.length - 6}
               </span>
             )}
           </div>
         </div>
 
-        {/* Content */}
         <div className="p-5 relative z-10">
           <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
             {project.title}
@@ -136,7 +133,6 @@ export default function ProjectCard({ project, index }: Props) {
             {project.description}
           </p>
 
-          {/* View Details Button */}
           <a
             href={project.liveUrl || project.githubUrl || "#"}
             target="_blank"
