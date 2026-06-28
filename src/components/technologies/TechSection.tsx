@@ -5,11 +5,12 @@ import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import { skills } from "@/lib/data";
 
-const categories = [
+ const categories = [
   { key: "all", label: "All Skills", icon: "\u2728" },
   { key: "frontend", label: "Frontend", icon: "</>" },
   { key: "backend", label: "Backend", icon: "{}" },
   { key: "tools", label: "Tools", icon: "\u2699\uFE0F" },
+  { key: "cloud", label: "Cloud / DevOps", icon: "\u2601\uFE0F" },
   { key: "other", label: "AI / Data", icon: "\u{1F916}" },
 ];
 

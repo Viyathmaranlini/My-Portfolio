@@ -32,5 +32,5 @@ export interface Skill {
   name: string;
   icon: string;
   level: number;
-  category: "frontend" | "backend" | "tools" | "other";
+  category: "frontend" | "backend" | "tools" | "cloud" | "other";
 }

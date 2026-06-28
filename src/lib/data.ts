@@ -152,18 +152,23 @@ export const skills: Skill[] = [
   { name: "MongoDB", icon: "\u{1F343}", level: 65, category: "backend" },
 
   // Tools
-  { name: "Git/GitHub", icon: "\u{1F4E6}", level: 82, category: "tools" },
   { name: "VS Code", icon: "\u{1F4BB}", level: 90, category: "tools" },
-  { name: "Docker", icon: "\u{1F433}", level: 55, category: "tools" },
   { name: "Figma", icon: "\u{1F3AF}", level: 60, category: "tools" },
-  { name: "Jupyter", icon: "\u{1F4D3}", level: 78, category: "tools" },
+  { name: "Postman", icon: "\u{1F4E8}", level: 70, category: "tools" },
 
-  // AI / Data / Cloud
+  // Cloud / DevOps
+  { name: "Git/GitHub", icon: "\u{1F4E6}", level: 82, category: "cloud" },
+  { name: "Docker", icon: "\u{1F433}", level: 55, category: "cloud" },
+  { name: "Cloud Computing", icon: "\u2601\uFE0F", level: 55, category: "cloud" },
+  { name: "CI/CD", icon: "\u{1F504}", level: 45, category: "cloud" },
+  { name: "Linux", icon: "\u{1F427}", level: 60, category: "cloud" },
+
+  // AI / Data
   { name: "Machine Learning", icon: "\u{1F916}", level: 70, category: "other" },
   { name: "Data Analysis", icon: "\u{1F4CA}", level: 75, category: "other" },
   { name: "TensorFlow", icon: "\u{1F9E0}", level: 60, category: "other" },
   { name: "Pandas", icon: "\u{1F43C}", level: 78, category: "other" },
-  { name: "Cloud Computing", icon: "\u2601\uFE0F", level: 55, category: "other" },
+  { name: "Jupyter", icon: "\u{1F4D3}", level: 78, category: "other" },
 ];
 
 export const socialLinks = {
