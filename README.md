@@ -114,26 +114,19 @@ npm run start
 ## 📸 Screenshots
 
 ### Hero Section
-<img width="1717" height="830" alt="image" src="https://github.com/user-attachments/assets/cf883689-98ce-485d-a384-809f18609e03" />
 
 ### About Me
-<img width="1583" height="847" alt="image" src="https://github.com/user-attachments/assets/7db6ec08-39d9-4f4c-9741-8933f59be544" />
 
 
 ### Technologies
-<img width="1506" height="855" alt="image" src="https://github.com/user-attachments/assets/00ad7c51-e483-4495-8782-446469dbbf49" />
 
 
 ### Projects
-<img width="1474" height="819" alt="image" src="https://github.com/user-attachments/assets/e45393a3-b3d3-4ae6-98e7-21b9431d97aa" />
-
 
 ### Certificates
-<img width="1600" height="712" alt="image" src="https://github.com/user-attachments/assets/c7d7650b-2a27-4e30-ad1c-d6cca63be916" />
 
 
 ### Contact
-<img width="1600" height="745" alt="image" src="https://github.com/user-attachments/assets/beca60dc-eab3-4268-9be1-e980f4a4b09d" />
 
 
 ## 🎨 Sections
