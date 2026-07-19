@@ -1,15 +1,16 @@
 import { Project, TimelineEntry, Certificate, Skill } from "@/types";
 
 export const projects: Project[] = [
-  {
+ {
     id: 1,
-    title: "Haritha TV",
-    description: "Full-stack e-commerce app with Stripe payments and admin dashboard.",
-    image: "/projects/haritha-tv.jpg",
-    tags: ["php", "html", "css", "javascript"],
-    githubUrl: "https://github.com/Viyathmaranlini/Haritha-TV",
-    category: "fullstack",
+    title: "🍄 FungiFinder — Wild Mushroom Identification & Toxicity Detection System",
+    description: "AI-powered web application for wild mushroom identification and toxicity detection with record management, statistical analytics, and emergency guidance — built for Sri Lanka.",
+    image: "/projects/mushroom-ai.jpg",
+    tags: ["Python", "TensorFlow", "CNN", "Flask", "chart.js","mongoDB","Google collab"],
+    githubUrl: "https://github.com/Viyathmaranlini/Fungi-finder",
+    category: "ml",
   },
+  
   {
     id: 2,
     title: "Sri Lanka Economic Analysis",
@@ -21,6 +22,15 @@ export const projects: Project[] = [
   },
   {
     id: 3,
+    title: "Haritha TV",
+    description: "Full-stack e-commerce app with Stripe payments and admin dashboard.",
+    image: "/projects/haritha-tv.jpg",
+    tags: ["php", "html", "css", "javascript"],
+    githubUrl: "https://github.com/Viyathmaranlini/Haritha-TV",
+    category: "fullstack",
+  },
+  {
+    id: 4,
     title: "Pizza Heaven",
     description: "PizzaHeaven is a responsive and user-friendly pizza shop website designed to give customers an easy and delicious online experience. ",
     image: "/projects/pizza-heaven.jpg",
@@ -29,30 +39,13 @@ export const projects: Project[] = [
     category: "fullstack",
   },
   {
-    id: 4,
+    id: 5,
     title: "News Sentiment Analysis",
     description: "A machine learning project that analyzes news articles to determine sentiment using NLP techniques.",
     image: "/projects/news-sentiment.jpg",
     tags: ["Python", "NLP", "TensorFlow", "Pandas"],
-    githubUrl: "https://github.com/you/project",
+    githubUrl: "https://github.com/Viyathmaranlini/News-Sentiment-Analysis",
     category: "ml",
-  },
-  {
-    id: 5,
-    title: "Mushroom Identification & Toxicity Detection",
-    description: "AI-powered system that identifies wild mushroom species and detects toxicity levels using deep learning and image classification.",
-    image: "/projects/mushroom-ai.jpg",
-    tags: ["Python", "TensorFlow", "CNN", "Flask", "OpenCV"],
-    githubUrl: "https://github.com/you/project",
-    category: "ml",
-  },
-  {
-    id: 6,
-    title: "Coming Soon",
-    description: "Something exciting is in the works. Stay tuned!",
-    image: "",
-    tags: [],
-    category: "coming-soon",
   },
 ];
 
