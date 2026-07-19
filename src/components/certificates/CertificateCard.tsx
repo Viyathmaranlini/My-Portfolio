@@ -1,9 +1,9 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
-import { FiExternalLink, FiAward } from "react-icons/fi";
+import { FiArrowRight, FiAward } from "react-icons/fi";
 import { Certificate } from "@/types";
 
 interface Props {
@@ -12,7 +12,15 @@ interface Props {
 }
 
 export default function CertificateCard({ cert, index }: Props) {
+  if (!cert) return null;
+
   const ref = useRef<HTMLDivElement>(null);
+
+  // State to handle image loading errors gracefully
+  const [imgSrc, setImgSrc] = useState<string>(cert.image || "");
+  const [hasError, setHasError] = useState<boolean>(false);
+
+  // Keeping your exact dynamic tilt values and configurations
   const x = useMotionValue(0.5);
   const y = useMotionValue(0.5);
   const rotateX = useSpring(useTransform(y, [0, 1], [8, -8]), { damping: 20, stiffness: 150 });
@@ -44,21 +52,31 @@ export default function CertificateCard({ cert, index }: Props) {
         style={{ rotateX, rotateY, transformPerspective: 800 }}
         className="group relative"
       >
-        <div className="relative bg-surface rounded-2xl border border-border overflow-hidden hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
-          {/* Hover gradient */}
-          <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        {/* Outer Card Layout matching Project Card layout exactly */}
+        <div className="relative bg-surface rounded-2xl border border-border overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10">
+          <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
 
-          {/* Certificate Image */}
-          <div className="relative h-44 w-full overflow-hidden">
-            {cert.image ? (
+          {/* 🖼️ Main Image Screen (Swapped 'h-44 w-full' with 'aspect-[16/10]') */}
+          <div className="relative aspect-[16/10] overflow-hidden bg-gray-950/40 border-b border-white/5">
+            {imgSrc ? (
               <>
                 <Image
-                  src={cert.image}
+                  src={imgSrc}
                   alt={cert.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-contain p-3 transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
+                  onError={() => {
+                    if (!hasError) {
+                      setHasError(true);
+                      // Fallback premium abstract wallpaper if certificate link breaks
+                      setImgSrc("https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80");
+                    }
+                  }}
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-surface via-surface/30 to-transparent" />
+                
+                {/* Visual overlays matching Project Card style */}
+                <div className="absolute inset-0 bg-linear-to-t from-surface via-transparent to-transparent opacity-40 pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-t from-surface/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </>
             ) : (
               <div className="w-full h-full flex items-center justify-center bg-surface-light">
@@ -66,42 +84,47 @@ export default function CertificateCard({ cert, index }: Props) {
               </div>
             )}
 
-            {/* Badge */}
-            <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30">
-              <span className="text-xs font-mono text-primary">{cert.date}</span>
+            {/* 📅 Date/Year Floating Badge (Top Left - Floating like project index) */}
+            <div className="absolute top-3 left-3 z-20">
+              <span className="text-xs font-mono font-medium px-3 py-1 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 text-primary">
+                {cert.date}
+              </span>
             </div>
-
-            {/* Verify link */}
-            {cert.credentialUrl && (
-              <a
-                href={cert.credentialUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full bg-surface/80 backdrop-blur-sm border border-border text-muted hover:text-primary hover:border-primary/30 transition-all"
-              >
-                <FiExternalLink size={14} />
-              </a>
-            )}
           </div>
 
-          {/* Content */}
-          <div className="relative p-5">
-            <h3 className="text-base font-bold mb-1 line-clamp-2 group-hover:text-primary transition-colors">
+          {/* 📝 Text Content & Button Info Block */}
+          <div className="p-5 relative z-10">
+            <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors tracking-wide line-clamp-1">
               {cert.title}
             </h3>
-            <p className="text-sm text-accent mb-4">{cert.issuer}</p>
+            
+            <p className="text-accent font-medium text-sm mt-1">
+              {cert.issuer}
+            </p>
 
-            {/* Skills */}
-            <div className="flex flex-wrap gap-1.5">
+            {/* 🏷️ Skill Tags Grid rendering below descriptions */}
+            <div className="flex flex-wrap gap-1.5 mt-4">
               {cert.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="text-xs font-mono px-2.5 py-1 rounded-full bg-surface-light text-muted border border-border group-hover:border-primary/20 group-hover:text-primary/80 transition-colors"
+                  className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-white/5 text-white/70 border border-white/10 group-hover:border-primary/20 group-hover:text-primary/80 transition-colors"
                 >
                   {skill}
                 </span>
               ))}
             </div>
+
+            {/* 🔗 Dynamic Action Button matching Project Card view link exactly */}
+            {cert.credentialUrl && (
+              <a
+                href={cert.credentialUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary/10 border border-primary/20 text-primary text-sm font-semibold hover:bg-primary/20 hover:border-primary/40 hover:gap-3 transition-all duration-300 w-fit"
+              >
+                Verify Credential <FiArrowRight size={14} />
+              </a>
+            )}
           </div>
         </div>
       </motion.div>
