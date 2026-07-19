@@ -13,24 +13,15 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Pizza Heaven",
-    description: "A full-stack pizza ordering website with real-time order tracking.",
-    image: "/projects/pizza-heaven.jpeg",
-    tags: ["html", "css", "javascript"],
-    githubUrl: "https://github.com/you/project",
-    category: "fullstack",
-  },
-  {
-    id: 3,
     title: "Sri Lanka Economic Analysis",
     description: "Interactive dashboard for visualizing and analyzing Sri Lanka's economic data with real-time charts.",
-    image: "/projects/srilanka-eda.jpeg",
+    image: "/public/projects/srilanka-eda.jpg",
     tags: ["Python", "pandas", "numpy", "matplotlib", "seaborn", "plotly", "scipy"],
     githubUrl: "https://github.com/you/project",
     category: "data",
   },
   {
-    id: 4,
+    id: 3,
     title: "News Sentiment Analysis",
     description: "A machine learning project that analyzes news articles to determine sentiment using NLP techniques.",
     image: "/projects/news-sentiment.jpg",
@@ -39,7 +30,7 @@ export const projects: Project[] = [
     category: "ml",
   },
   {
-    id: 5,
+    id: 4,
     title: "Mushroom Identification & Toxicity Detection",
     description: "AI-powered system that identifies wild mushroom species and detects toxicity levels using deep learning and image classification.",
     image: "/projects/mushroom-ai.jpg",
@@ -48,7 +39,7 @@ export const projects: Project[] = [
     category: "ml",
   },
   {
-    id: 6,
+    id: 5,
     title: "Cloud & DevOps Hands-on Labs",
     description: "Centralized portfolio of hands-on cloud engineering labs focusing on AWS infrastructure, Docker containerization, CI/CD pipelines, and Infrastructure as Code.",
     image: "/projects/cloud-labs.jpg",
@@ -57,7 +48,7 @@ export const projects: Project[] = [
     category: "cloud",
   },
   {
-    id: 7,
+    id: 6,
     title: "Coming Soon",
     description: "Something exciting is in the works. Stay tuned!",
     image: "",

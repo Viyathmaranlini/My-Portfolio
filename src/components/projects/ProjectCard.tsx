@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
 import { FiArrowRight, FiClock } from "react-icons/fi";
@@ -16,6 +16,10 @@ export default function ProjectCard({ project, index }: Props) {
 
   const isComingSoon = project.title === "Coming Soon";
   const ref = useRef<HTMLDivElement>(null);
+  
+  // State to handle image loading errors gracefully
+  const [imgSrc, setImgSrc] = useState<string>(project.image || "");
+  const [hasError, setHasError] = useState<boolean>(false);
 
   const x = useMotionValue(0.5);
   const y = useMotionValue(0.5);
@@ -81,63 +85,65 @@ export default function ProjectCard({ project, index }: Props) {
       <div className="relative bg-surface rounded-2xl border border-border overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10">
         <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
 
-        <div className="relative aspect-[16/10] overflow-hidden">
-          {project.image ? (
+        {/* 🖼️ Main Mockup Image Container */}
+        <div className="relative aspect-[16/10] overflow-hidden bg-gray-950/40">
+          {imgSrc ? (
             <>
               <Image
-                src={project.image}
+                src={imgSrc}
                 alt={project.title}
                 fill
-                className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                className="object-contain p-2 transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
+                onError={() => {
+                  if (!hasError) {
+                    setHasError(true);
+                    setImgSrc("https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80");
+                  }
+                }}
               />
-              <div className="absolute inset-0 bg-linear-to-t from-surface via-transparent to-transparent" />
-              <div className="absolute inset-0 bg-linear-to-t from-surface/90 via-surface/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Subtle Overlay Layers for Depth */}
+              <div className="absolute inset-0 bg-linear-to-t from-surface via-transparent to-transparent opacity-40 pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-t from-surface/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             </>
           ) : (
             <div className="w-full h-full bg-surface-light" />
           )}
 
-          <div className="absolute top-3 left-3 flex gap-1.5 z-20">
-            {project.tags.slice(0, 2).map((tag) => (
-              <span
-                key={tag}
-                className="text-xs font-mono px-2.5 py-1 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 text-primary font-medium"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          <div className="absolute bottom-4 left-4 right-4 z-20 flex flex-wrap gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-            {project.tags.slice(2, 6).map((tag) => (
-              <span
-                key={tag}
-                className="text-xs font-mono px-2.5 py-1 rounded-full bg-surface/80 backdrop-blur-sm text-white border border-white/10"
-              >
-                {tag}
-              </span>
-            ))}
-            {project.tags.length > 6 && (
-              <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-surface/80 backdrop-blur-sm text-white border border-white/10">
-                +{project.tags.length - 6}
-              </span>
-            )}
+          {/* 🎯 Project Number Badge (Top Left - Clean & Floating) */}
+          <div className="absolute top-3 left-3 z-20">
+            <span className="text-xs font-mono font-medium px-3 py-1 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 text-primary">
+              Project {index + 1}
+            </span>
           </div>
         </div>
 
+        {/* 📝 Content Info Block */}
         <div className="p-5 relative z-10">
-          <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
+          <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors tracking-wide">
             {project.title}
           </h3>
           <p className="text-muted text-sm mt-2 line-clamp-2 leading-relaxed">
             {project.description}
           </p>
 
+          {/* 🏷️ Technology Tags Grid below description */}
+          <div className="flex flex-wrap gap-1.5 mt-3">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-white/5 text-white/70 border border-white/10"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
           <a
             href={project.liveUrl || project.githubUrl || "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary/10 border border-primary/20 text-primary text-sm font-semibold hover:bg-primary/20 hover:border-primary/40 hover:gap-3 transition-all duration-300"
+            className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary/10 border border-primary/20 text-primary text-sm font-semibold hover:bg-primary/20 hover:border-primary/40 hover:gap-3 transition-all duration-300 w-fit"
           >
             View Details <FiArrowRight size={14} />
           </a>
