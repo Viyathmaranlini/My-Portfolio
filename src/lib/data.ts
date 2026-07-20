@@ -99,6 +99,7 @@ export const certificates: Certificate[] = [
     image: "/certificates/cert5.jpg",
     skills: ["Business Analysis"],  
   },
+
 ];
 
 export const skills: Skill[] = [
