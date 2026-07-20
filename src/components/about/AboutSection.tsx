@@ -31,10 +31,9 @@ const timelineItems = [
     year: "2023",
     icon: FiAward,
     title: "Math & Statistics Circle",
-    subtitle: "Active Member",
     org: "NSBM Green University",
     description: "Engaged in problem-solving sessions and statistical analysis workshops, strengthening analytical thinking for data science.",
-    image: "",
+    image: "/volunteer/math-circle.jpg",
     color: "from-secondary to-primary",
   },
   {
@@ -44,7 +43,7 @@ const timelineItems = [
     subtitle: "Undergraduate",
     org: "NSBM Green University",
     description: "Focusing on Data Analytics, Machine Learning, Cloud Computing, and Software Engineering.",
-    image: "",
+    image: "/volunteer/NSBM.jpg",
     color: "from-primary to-secondary",
   },
 ];
