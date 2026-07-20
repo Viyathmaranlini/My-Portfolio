@@ -140,8 +140,7 @@ export const skills: Skill[] = [
 ];
 
 export const socialLinks = {
-  github: "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/yourusername",
-  twitter: "https://twitter.com/yourusername",
-  email: "your@email.com",
+  github: "https://github.com/Viyathmaranlini",
+  linkedin: "https://linkedin.com/in/viyathma-arukgoda",  
+  email: "viyathmaawa@gmail.com",
 };
