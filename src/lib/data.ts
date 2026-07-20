@@ -45,7 +45,7 @@ export const projects: Project[] = [
     image: "/projects/news-sentiment.jpg",
     tags: ["Python", "NLP", "TensorFlow", "Pandas"],
     githubUrl: "https://github.com/Viyathmaranlini/News-Sentiment-Analysis",
-    category: "ml",
+    category: "data",
   },
 ];
 
