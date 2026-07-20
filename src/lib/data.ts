@@ -56,7 +56,7 @@ export const certificates: Certificate[] = [
     issuer: "Oracle",
     date: "2025",
     image: "/certificates/cert1.jpg",
-    skills: ["Python", "Machine Learning"],
+    skills: ["cloud computing", "Oracle Cloud"],
   },
   {
     id: 2,
@@ -88,7 +88,7 @@ export const certificates: Certificate[] = [
     issuer: "postman",
     date: "2024",
     image: "/certificates/cert4.jpg",
-    skills: ["React", "Next.js"],  
+    skills: ["Postman API"],  
   },
 
   {
@@ -97,7 +97,7 @@ export const certificates: Certificate[] = [
     issuer: "Alison",
     date: "2026",
     image: "/certificates/cert5.jpg",
-    skills: ["React", "Next.js"],  
+    skills: ["Business Analysis"],  
   },
 ];
 
