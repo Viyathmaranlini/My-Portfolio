@@ -57,7 +57,6 @@ export const certificates: Certificate[] = [
     date: "2025",
     image: "/certificates/cert1.jpg",
     skills: ["Python", "Machine Learning"],
-    credentialUrl: "https://coursera.org/verify/xxx",
   },
   {
     id: 2,
@@ -66,7 +65,6 @@ export const certificates: Certificate[] = [
     date: "2025",
     image: "/certificates/cert2.jpg",
     skills: ["Agentic AI Development", "AI", "LangChain"],
-    credentialUrl: "https://coursera.org/verify/xxx",
   },
   {
     id: 3,
@@ -74,8 +72,7 @@ export const certificates: Certificate[] = [
     issuer: "University of Moratuwa",
     date: "2026",
     image: "/certificates/cert3.jpg",
-    skills: ["python"],
-    credentialUrl: "",  
+    skills: ["python"],  
   },
   {
     id: 4,
@@ -83,8 +80,7 @@ export const certificates: Certificate[] = [
     issuer: "Sololearn",
     date: "2023",
     image: "/certificates/cert6.jpg",
-    skills: ["Angular", "TypeScript"],
-    credentialUrl: "https://udemy.com/certificate/xxx",  
+    skills: ["Angular", "TypeScript"],  
   },
   {
     id: 5,
@@ -92,8 +88,7 @@ export const certificates: Certificate[] = [
     issuer: "postman",
     date: "2024",
     image: "/certificates/cert4.jpg",
-    skills: ["React", "Next.js"],
-    credentialUrl: "https://udemy.com/certificate/xxx",  
+    skills: ["React", "Next.js"],  
   },
 
   {
@@ -102,8 +97,7 @@ export const certificates: Certificate[] = [
     issuer: "Alison",
     date: "2026",
     image: "/certificates/cert5.jpg",
-    skills: ["React", "Next.js"],
-    credentialUrl: "https://udemy.com/certificate/xxx",  
+    skills: ["React", "Next.js"],  
   },
 ];
 
