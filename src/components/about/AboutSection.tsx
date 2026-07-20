@@ -7,15 +7,15 @@ import SectionWrapper from "@/components/layout/SectionWrapper";
 import { FiBookOpen, FiUsers, FiCode, FiAward } from "react-icons/fi";
 
 const timelineItems = [
-  {
-    year: "2024",
-    icon: FiCode,
-    title: "AlgoXplore 1.0",
-    subtitle: "Marketing Team Member",
-    org: "Hackathon Hub NSBM",
-    description: "Led social media campaigns and coordinated with university channels to drive participant registrations for the hackathon.",
-    image: "/volunteer/algoxplore.jpg",
-    color: "from-primary to-accent",
+   {
+    year: "2023",
+    icon: FiBookOpen,
+    title: "BSc (Hons) Computer Science",
+    subtitle: "Undergraduate",
+    org: "NSBM Green University",
+    description: "Focusing on Data Analytics, Machine Learning, Cloud Computing, and Software Engineering.",
+    image: "/volunteer/NSBM.jpg",
+    color: "from-primary to-secondary",
   },
   {
     year: "2023",
@@ -37,15 +37,16 @@ const timelineItems = [
     color: "from-secondary to-primary",
   },
   {
-    year: "2023",
-    icon: FiBookOpen,
-    title: "BSc (Hons) Computer Science",
-    subtitle: "Undergraduate",
-    org: "NSBM Green University",
-    description: "Focusing on Data Analytics, Machine Learning, Cloud Computing, and Software Engineering.",
-    image: "/volunteer/NSBM.jpg",
-    color: "from-primary to-secondary",
+    year: "2024",
+    icon: FiCode,
+    title: "AlgoXplore 1.0",
+    subtitle: "Marketing Team Member",
+    org: "Hackathon Hub NSBM",
+    description: "Led social media campaigns and coordinated with university channels to drive participant registrations for the hackathon.",
+    image: "/volunteer/algoxplore.jpg",
+    color: "from-primary to-accent",
   },
+ 
 ];
 
 function TimelineCard({ item, index }: { item: typeof timelineItems[0]; index: number }) {
