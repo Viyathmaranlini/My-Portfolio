@@ -61,14 +61,13 @@ export const certificates: Certificate[] = [
   },
   {
     id: 2,
-    title: "Angular",
-    issuer: "Sololearn",
-    date: "2023",
+    title: "Agentic AI Certified Foundation 2026",
+    issuer: "Oracle",
+    date: "2025",
     image: "/certificates/cert2.jpg",
-    skills: ["React", "Next.js"],
-    credentialUrl: "https://udemy.com/certificate/xxx",  
+    skills: ["Agentic AI Development", "AI", "LangChain"],
+    credentialUrl: "https://coursera.org/verify/xxx",
   },
-
   {
     id: 3,
     title: "Python for Beginners",
@@ -78,9 +77,17 @@ export const certificates: Certificate[] = [
     skills: ["python"],
     credentialUrl: "",  
   },
-
   {
     id: 4,
+    title: "Angular",
+    issuer: "Sololearn",
+    date: "2023",
+    image: "/certificates/cert6.jpg",
+    skills: ["Angular", "TypeScript"],
+    credentialUrl: "https://udemy.com/certificate/xxx",  
+  },
+  {
+    id: 5,
     title: "Postman API Fundamentals",
     issuer: "postman",
     date: "2024",
@@ -90,7 +97,7 @@ export const certificates: Certificate[] = [
   },
 
   {
-    id: 5,
+    id: 6,
     title: "Business Analysis",
     issuer: "Alison",
     date: "2026",
